@@ -1,0 +1,6 @@
+INDEX VERSION 1.134+E:\School\2026\UNI\IF2B\Algoritma\.metadata\.plugins\org.eclipse.jdt.core
+2735733366.index
+1865797976.index
+3158734823.index
+515572018.index
+961959605.index

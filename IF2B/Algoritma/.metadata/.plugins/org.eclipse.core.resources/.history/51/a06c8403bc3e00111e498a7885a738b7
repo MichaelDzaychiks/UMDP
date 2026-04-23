@@ -1,0 +1,36 @@
+package arrayList;
+
+import java.util.ArrayList;
+
+class Barang{
+	String nama;
+	int harga, jumlah;
+	
+//	ini constructor
+	public Barang(String nama,int harga,int jumlah) {
+		this.nama = nama;
+		this.harga = harga;
+		this.jumlah = jumlah;
+	}
+	
+	public int getSubTotal() {
+		return harga*jumlah;
+	}
+}
+
+public class Belanja {
+
+	public static void main(String[] args) {
+		ArrayList<Barang> dataBarang = new ArrayList<Barang>();
+		dataBarang.add(new Barang("Beras", 12000, 2));
+		dataBarang.add(new Barang("Mie", 3500, 1));
+		dataBarang.add(new Barang("Telur", 2500, 2));
+		
+		System.out.println("Detail Barang: ");
+		for (int i = 0; i < dataBarang.size(); i++) {
+			Barang b = dataBarang.get(i);
+			System.out.println("nama Barang: " + b.nama + "harga barang: "+ b.harga + "jumlah barang: " + b.jumlah);
+		} 
+	}
+
+}

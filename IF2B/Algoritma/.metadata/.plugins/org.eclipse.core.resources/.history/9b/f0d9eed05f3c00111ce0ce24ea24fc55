@@ -1,0 +1,74 @@
+package if2b;
+
+class Node{
+	int data;
+	Node pointer;
+	
+	public Node(int data) {
+		this.data = data;
+		this.pointer = null;
+	}
+}
+
+public class SingleLinkedList {
+	Node head = null;
+	Node tail = null;
+	
+	public void insertFirst(int data) {
+//		node baru yang akan disisipkan dengan data
+		Node node = new Node(data); 
+		
+		if(this.head == null) {
+			this.head = node;  //update head adalah node baru
+			this.tail = this.head; //krn node = 1, maka tail = head
+		} else {
+			node.pointer = this.head; // update pointer node baru menuju node lama
+			this.head = node; // update head adalah node baru
+		}
+	}
+	
+	public void insertLast(int data) {
+		Node node = new Node(data);
+		
+		if(this.head == null) {
+			this.head = node;
+			this.tail = this.head;
+		} else { //jika head ada isi, maka letakkan node baru di paling belakang
+			Node nodeSebelum = this.head;
+			while(nodeSebelum.pointer != null) {
+				nodeSebelum = nodeSebelum.pointer; //cari pointer paling akhir
+			}
+			nodeSebelum.pointer = node; //update pointer ke node baru
+			
+			this.tail = nodeSebelum.pointer;
+		}
+	}
+	
+	public void tampil() {
+		if(this.head==null) {
+			System.out.println("Linked List kosong");
+		} else {
+			Node node = this.head;
+			System.out.print("Single Linked List: ");
+			while(node != null) {
+				System.out.println(node.data + " ");
+				node = node.pointer;
+			}
+			System.out.println();
+		}
+	}
+	
+	public static void main(String[] args) {
+	
+		SingleLinkedList single = new SingleLinkedList();
+		single.tampil(); //Linked List kosong
+		single.insertFirst(50);
+		single.tampil(); //50
+		single.insertFirst(100);
+		single.tampil(); //100 50
+		single.insertLast(25);
+		single.tampil(); //100 50 25
+		
+	}
+	
+}

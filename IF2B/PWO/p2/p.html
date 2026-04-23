@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Farel Jonathan - Portfolio</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <style>
+        * {
+            font-family: Arial, sans-serif;
+        }
+        header{
+            background-color: #355872;
+            padding: 9px;
+        }
+        h1{
+            text-align: center;
+        }
+        nav{
+            text-align: center;
+            background-color:#7AAACE;
+            padding: 9px;
+        }
+        .tab-buttons{
+            display: flex;
+            justify-content: center;
+            background-color: #525b60;
+            padding: 10px;
+        }
+        .tab-btn{
+            padding: 10px 20px;
+            margin: 0 5px;
+            cursor: pointer;
+            background-color: #7AAACE;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+        .tab-btn:hover{
+            background-color: #9CD5FF;
+        }
+        .tab-btn.active{
+            background-color: #355872;
+            color: white;
+        }
+        
+        .tab-content{
+            display: none;
+            padding: 20px;
+        }
+        .tab-content.active{
+            display: block;
+        }
+        
+        .content-container{
+            background-color: #f0f0f0;
+            padding: 20px;
+            border-radius: 10px;
+            min-height: 200px;
+            margin: 20px;
+        }
+        
+        aside{
+            background-color: #9CD5FF;
+            text-align: center;
+        }
+        .container{
+            display: flex;
+            justify-content: space-between;
+        }
+        .left-aside{
+            flex:1;
+            padding: 1rem;
+        }
+        .right-aside{
+            flex:3;
+            padding: 1rem;
+            background-color: #8dbadb;
+            text-align: center;
+        }
+        footer{
+            background-color: #525b60;
+            color: #ffffff;
+            padding: 0px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <header style="background-color: #355872; padding: 9px;">
+        <h1 style="text-align: center;">Farel Ganteng</h1>
+    </header>
+    <br>
+    <!-- <nav>Lorem ipsum dolor sit amet consectetur adipisicing elit. Modi, necessitatibus.</nav> -->
+    
+    <div class="tab-buttons">
+        <button class="tab-btn active" onclick="openPage('page1')">Page 1</button>
+        <button class="tab-btn" onclick="openPage('page2')">Page 2</button>
+        <button class="tab-btn" onclick="openPage('page3')">Page 3</button>
+    </div>
+    
+    <div id="page1" class="tab-content active">
+        <div class="container">
+            <aside class="left-aside">
+                <h2>partner</h2>
+                <img src="images/farel.jpg" alt="" width="200">
+                <p>Lorem ipsum dolor sit amet.</p>
+            </aside>
+            <main class="right-aside">
+                <h1>Farel Jonathan</h1>
+                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Laudantium molestiae, vitae iusto atque similique eligendi temporibus voluptate vel aliquam, quis veniam, sit excepturi iure non ipsam quod eum architecto. Repellendus quibusdam aliquid corrupti deleniti dignissimos tenetur ut vitae laudantium vel, fugit assumenda commodi, suscipit exercitationem, dolorem rerum facilis. Accusamus, atque.</p>
+            </main>
+        </div>
+        
+        <div class="content-container" id="page1-content">
+            <h2>4 Reasons why u should love Farel Jonathan</h2>
+            <p></p>
+            <ul>
+                <li>He's Cute!</li>
+                <li>He's Super cute!</li>
+                <li>He's fuckin' cute!</li>
+            </ul>
+        </div>
+    </div>
+    
+    <div id="page2" class="tab-content">
+        <div class="container">
+            <aside class="left-aside">
+                <h2>Chou Kaguya-Hime</h2>
+                <img src="https://myanimelist.net/images/anime/1544/154878.jpg" alt="" width="auto" height= "auto";>
+                <!-- <p>From: Chou Kaguya-Hime.</p> -->
+            </aside>
+            <main class="right-aside">
+                <!-- <h1>Yachiyo Runami</h1>
+                <p>No bigraphy written.<a href="https://myanimelist.net/character/282384/Yachiyo_Runami">myanimelist.net</a></p> -->
+                <h2>Apa itu Cho-Kaguya-Hime?</h2>
+                <p> <strong> Cosmic Princess Kaguya! (Japanese: 超かぐや姫！, Hepburn: Chō Kaguya-hime!) </strong> is a 2026 Japanese animated musical yuri fantasy film directed by Shingo Yamashita, in his feature directorial debut, from a screenplay he co-wrote with Saeri Natsuo [ja]. A reimagining of the folktale The Tale of the Bamboo Cutter, the film follows high school student Iroha Sakayori and Kaguya, a girl from the Moon, as they compete in a streamer tournament within the virtual world of Tsukuyomi. It is produced by Studio Colorido and Studio Chromato with character designs from Akihiro Nagae and Hechima. The film stars the voices of Yūko Natsuyoshi, Anna Nagase, and Saori Hayami.</p>
+                <div style="background: rgb(91, 168, 219); padding: 10px; margin: 10px 0;">
+                    <h3>Official Website!</h3>
+                    <a href="https://www.cho-kaguyahime.com/">Press This link !</a>
+                </div>
+            </main>
+        </div>
+        <div class="content-container" id="page2-content">
+            <h2>Apa itu Cho-Kaguya-Hime?</h2>
+            <p> <strong> Cosmic Princess Kaguya! (Japanese: 超かぐや姫！, Hepburn: Chō Kaguya-hime!) </strong> is a 2026 Japanese animated musical yuri fantasy film directed by Shingo Yamashita, in his feature directorial debut, from a screenplay he co-wrote with Saeri Natsuo [ja]. A reimagining of the folktale The Tale of the Bamboo Cutter, the film follows high school student Iroha Sakayori and Kaguya, a girl from the Moon, as they compete in a streamer tournament within the virtual world of Tsukuyomi. It is produced by Studio Colorido and Studio Chromato with character designs from Akihiro Nagae and Hechima. The film stars the voices of Yūko Natsuyoshi, Anna Nagase, and Saori Hayami.</p>
+            <div style="background: white; padding: 10px; margin: 10px 0;">
+                <h3>Official Website!</h3>
+                <a href="https://www.cho-kaguyahime.com/">Press This link !</a>
+            </div>
+        </div>
+        
+    </div>
+    
+    <div id="page3" class="tab-content">
+        <div class="container">
+            <aside class="left-aside">
+                <h2>
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTJN29Z-MNz74X_5uu3Zi5N8WglF72cphdyQg&s" alt="">
+                </h2>
+                <p></p>
+            </aside>
+            <main class="right-aside">
+                <h1>Something</h1>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. A, incidunt?</p>
+            </main>
+        </div>
+        
+        <div class="content-container" id="page3-content">
+            <h2>charas in Chou-Kaguya-hime</h2>
+            <p>Character list!</p>
+            <table border="1" style="width: 100%; border-collapse: collapse;">
+                <tr>
+                    <th>Column 1</th>
+                    <th>Column 2</th>
+                </tr>
+                <tr>
+                    <td>Data 1</td>
+                    <td>Data 2</td>
+                </tr>
+            </table>
+        </div>
+    </div>
+    
+    <footer>
+        <p>&copy; copyright</p>
+    </footer>
+    
+    <script>
+        function openPage(pageId) {
+            var contents = document.querySelectorAll('.tab-content');
+            for (var i = 0; i < contents.length; i++) {
+                contents[i].classList.remove('active');
+            }
+            
+            var buttons = document.querySelectorAll('.tab-btn');
+            for (var i = 0; i < buttons.length; i++) {
+                buttons[i].classList.remove('active');
+            }
+            
+            document.getElementById(pageId).classList.add('active');
+            event.target.classList.add('active');
+        }
+    </script>
+</body>
+</html>

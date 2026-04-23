@@ -1,0 +1,156 @@
+package if2b;
+
+class Node{
+	int data;
+	Node pointer;
+	
+	public Node(int data) {
+		this.data = data;
+		this.pointer = null;
+	}
+}
+
+public class SingleLinkedList {
+	Node head = null;
+	Node tail = null;
+	
+	public void insertFirst(int data) {
+//		node baru yang akan disisipkan dengan data
+		Node node = new Node(data); 
+		
+		if(this.head == null) {
+			this.head = node;  //update head adalah node baru
+			this.tail = this.head; //krn node = 1, maka tail = head
+		} else {
+			node.pointer = this.head; // update pointer node baru menuju node lama
+			this.head = node; // update head adalah node baru
+		}
+	}
+	
+	public void insertLast(int data) {
+		Node node = new Node(data);
+		
+		if(this.head == null) {
+			this.head = node;
+			this.tail = this.head;
+		} else { //jika head ada isi, maka letakkan node baru di paling belakang
+			Node nodeSebelum = this.head;
+			while(nodeSebelum.pointer != null) {
+				nodeSebelum = nodeSebelum.pointer; //cari pointer paling akhir
+			}
+			nodeSebelum.pointer = node; //update pointer ke node baru
+			
+			this.tail = nodeSebelum.pointer;
+		}
+	}
+	
+	public void deleteFirst() {
+		if(this.head == null) {
+			System.out.println("Linked list kosong");
+		} else {
+			if(this.head == this.tail) {
+				this.head = null;
+				this.tail = null;
+			} else {
+				this.head = this.head.pointer;
+			}
+		}
+	}
+	
+	public void deleteLast() {
+		if(this.head == null) {
+			System.out.println("linked list kosong");
+		} else {
+			Node node = this.head;
+			while(node.pointer != this.tail) {
+				node = node.pointer;
+			}
+			this.tail = node; 
+		}
+	}
+	
+	public void insertPosition(int data, int posisi) {
+		Node nodeBaru = new Node(data);
+		Node nodeSebelum = this.head;
+		
+		if(posisi == 1) {
+			nodeBaru.pointer = this.head;
+			this.head = nodeBaru;
+			
+			if(this.tail == null) {
+				this.tail = nodeBaru;
+			}
+			
+		} else {
+			for(int i = 1; i < posisi-1; i++) {
+				nodeSebelum = nodeSebelum.pointer;
+			}
+			nodeBaru.pointer = nodeSebelum.pointer;
+			nodeSebelum.pointer = nodeBaru;
+			
+			if(nodeBaru.pointer == null) {
+				this.tail = nodeBaru;
+			}
+		}
+		
+	}
+	
+	public void garis() {
+		System.out.println("=======================================================================");
+	}
+	
+	public void tampil() {
+		if(this.head==null) {
+			System.out.println("Linked List kosong");
+		} else {
+			Node node = this.head;
+			System.out.print("Single Linked List: ");
+			while(node != null) {
+				System.out.print(node.data + " ");
+				node = node.pointer;
+			}
+			System.out.println();
+		}
+	}
+	
+	public static void main(String[] args) {
+	
+		SingleLinkedList single = new SingleLinkedList();
+		single.tampil(); // linked List Kosong
+		System.out.println("Insert First");
+		single.insertFirst(50);
+		single.tampil(); // 50
+		single.insertFirst(100);
+		single.tampil(); // 100 50
+		single.garis();
+		System.out.println("Insert Last");
+		single.insertLast(25);
+		single.tampil(); // 100 50 25
+		single.insertLast(60);
+		single.tampil(); // 100 50 25 60
+		single.garis();
+		System.out.println("Insert Position");
+		single.insertPosition(10, 1);
+		single.tampil(); // 10 100 50 25 60 
+		single.insertPosition(20, 2);
+		single.tampil(); // 10 20 100 50 25 60 
+		single.insertPosition(30, 3);
+		single.tampil(); // 10 20 30 100 50 25 60 
+		single.insertPosition(40, 8);
+		single.tampil(); // 10 20 30 100 50 25 60 40
+		single.insertPosition(70, 6);
+		single.tampil(); // 10 20 30 100 50 70 25 60 40
+		single.garis();
+		System.out.println("DELETE FIRST");
+		single.deleteFirst();
+		single.tampil(); //  20 30 100 50 70 25 60 40
+		single.deleteFirst();
+		single.tampil(); // 30 100 50 70 25 60 40
+		single.deleteFirst(); 
+		single.tampil(); //100 50 25 60 40
+		System.out.println("DELETE LAST");
+		single.deleteLast();
+		single.tampil(); //100 50 25 60
+	}
+	
+}

@@ -6,4 +6,8 @@
     <fullyQualifiedTypeName name="if2b.SingleLinkedList"/>
     <fullyQualifiedTypeName name="java.util.ArrayList"/>
     <fullyQualifiedTypeName name="java.io.ObjectInputStream.GetField"/>
+    <fullyQualifiedTypeName name="java.awt.Insets"/>
+    <fullyQualifiedTypeName name="java.util.LinkedList"/>
+    <fullyQualifiedTypeName name="javax.net.ssl.SSLEngine"/>
+    <fullyQualifiedTypeName name="if2b.ArrayStack"/>
 </qualifiedTypeNameHistroy>

@@ -1,0 +1,46 @@
+package arrayList;
+
+import java.util.ArrayList;
+
+public class Coba_Array_List {
+
+	public static void main(String[] args) {
+		//Array 
+		String[] nama = new String[5];
+		nama[0] = "Kiana Kaslana";
+		nama[1] = "Michael Chan";
+		nama[2] = "Paga Michael Sembiring";
+		nama[3] = "Nathaniel Dwi";
+		nama[4] = "Peter";
+		
+		//Array List
+		ArrayList<String> namaMahasiswa = new ArrayList<String>();
+		namaMahasiswa.add("Kiana Kaslana");
+		namaMahasiswa.add("Michael Chan");
+		namaMahasiswa.add("Paga Michael Sembiring");
+		namaMahasiswa.add("Nathaniel Dwi");
+		namaMahasiswa.add("Peter King");
+		
+		for (String data : namaMahasiswa) {
+			System.out.println("nama mahasiswa: " + data);
+		}
+		for (int i = 0; i < namaMahasiswa.size(); i++) {
+			System.out.println("nama mahasiswaa: " + namaMahasiswa.get(i));
+		}
+		//menampilkan data di indeks ke-2
+		System.out.println("data ke-2: " + namaMahasiswa.get(2));
+//		menampilkan ukuran arraylist
+		System.out.println("Banyak Mahasiwa: " + namaMahasiswa.size());
+		
+//		hapus data
+		namaMahasiswa.removeLast();
+		for(int i = 0; i < namaMahasiswa.size(); i++) {
+			System.out.println("nama mahasiswa: " + namaMahasiswa.get(i));
+		}
+		
+//		hapus semua data
+		namaMahasiswa.clear();
+		System.out.println("BanyakMahasiswa: " + namaMahasiswa.size());
+	}
+
+}

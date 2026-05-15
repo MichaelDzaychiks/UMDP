@@ -1,0 +1,7 @@
+infix : (A+B)*C-D
+
+Hasil PostFix:
+(A+B)*C-D
+AB+*C-D
+AB+C*-D
+AB+C*D-

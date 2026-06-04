@@ -1,10 +1,13 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <dirs>
     <entry loc="C:\Program Files\Java\jdk1.8.0_111" stamp="1755220498071"/>
+    <entry loc="C:\Users\Hp\.p2\pool\plugins\org.eclipse.justj.openjdk.hotspot.jre.full.win32.x86_64_21.0.10.v20260205-0638\jre" stamp="1772413706934"/>
+    <entry loc="C:\Program Files\Java\jre-1.8" stamp="1767041681845"/>
     <entry loc="C:\Program Files\Java\jdk-25" stamp="1770619952394"/>
     <entry loc="C:\Program Files\Java\jre1.8.0_461" stamp="1755160074216"/>
     <entry loc="C:\Program Files\Java\jdk-21" stamp="1755768963651"/>
     <entry loc="C:\Program Files\Java\jre1.8.0_111" stamp="1755220497819"/>
     <entry loc="C:\Users\user1\.p2\pool\plugins\org.eclipse.justj.openjdk.hotspot.jre.full.win32.x86_64_21.0.8.v20250724-1412\jre" stamp="1755238305504"/>
     <entry loc="C:\Users\user1\.p2\pool\plugins\org.eclipse.justj.openjdk.hotspot.jre.full.win32.x86_64_21.0.8.v20250724-1412" stamp="1755238305507"/>
+    <entry loc="C:\Users\Hp\.p2\pool\plugins\org.eclipse.justj.openjdk.hotspot.jre.full.win32.x86_64_21.0.10.v20260205-0638" stamp="1772413706942"/>
 </dirs>

@@ -1,3 +1,4 @@
-2026/05/25-08:28:17.475 311c Reusing MANIFEST E:\School\2026\UMDP\2026\IF2B\Algoritma\.metadata\.plugins\org.eclipse.swt\EBWebView\Default\Session Storage/MANIFEST-000001
-2026/05/25-08:28:17.476 311c Recovering log #3
-2026/05/25-08:28:17.477 311c Reusing old log E:\School\2026\UMDP\2026\IF2B\Algoritma\.metadata\.plugins\org.eclipse.swt\EBWebView\Default\Session Storage/000003.log 
+2026/06/04-09:21:47.976 13a0 Reusing MANIFEST E:\School\2026\UMDP\2026\IF2B\Algoritma\.metadata\.plugins\org.eclipse.swt\EBWebView\Default\Session Storage/MANIFEST-000001
+2026/06/04-09:21:47.977 13a0 Recovering log #3
+2026/06/04-09:21:47.977 13a0 (ignoring error) E:\School\2026\UMDP\2026\IF2B\Algoritma\.metadata\.plugins\org.eclipse.swt\EBWebView\Default\Session Storage/000003.log: dropping 235 bytes; Corruption: checksum mismatch
+2026/06/04-09:21:47.978 13a0 Reusing old log E:\School\2026\UMDP\2026\IF2B\Algoritma\.metadata\.plugins\org.eclipse.swt\EBWebView\Default\Session Storage/000003.log 

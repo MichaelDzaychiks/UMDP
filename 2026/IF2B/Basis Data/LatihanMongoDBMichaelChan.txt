@@ -1,0 +1,280 @@
+db.TamuHotel.insertMany([
+{
+KodeTamu: "TMVI001",
+Nama: "Michael Chan",
+Alamat: "JL.Radio No.2 KM.4",
+JenisKelamin: "Laki-laki",
+KategoriPelanggan: "VIP"
+},
+{
+KodeTamu: "TMRE002",
+Nama: "Andi Wijaya",
+Alamat: "Jl. Melati No.10",
+JenisKelamin: "Laki-laki",
+KategoriPelanggan: "Reguler"
+},
+{
+KodeTamu: "TMVI003",
+Nama: "Deni Gunawan",
+Alamat: "Jl. Anggrek No.5",
+JenisKelamin: "Laki-laki",
+KategoriPelanggan: "VIP"
+},
+{
+KodeTamu: "TMRE004",
+Nama: "Gina Aprilia",
+Alamat: "Jl. Mawar No.23",
+JenisKelamin: "Perempuan",
+KategoriPelanggan: "Reguler"
+},
+{
+KodeTamu: "TMRE005",
+Nama: "Budi Santoso",
+Alamat: "Jl. Cemara No.12",
+JenisKelamin: "Laki-laki",
+KategoriPelanggan: "Reguler"
+},
+{
+KodeTamu: "TMVI006",
+Nama: "Erika Putri",
+Alamat: "Jl. Flamboyan No.8",
+JenisKelamin: "Perempuan",
+KategoriPelanggan: "VIP"
+},
+{
+KodeTamu: "TMRE007",
+Nama: "Intan Lestari",
+Alamat: "Jl. Kenanga No.3",
+JenisKelamin: "Laki-laki",
+KategoriPelanggan: "Reguler"
+},
+{
+KodeTamu: "TMRE008",
+Nama: "Clara Indah",
+Alamat: "Jl. Sakura No.19",
+JenisKelamin: "Perempuan",
+KategoriPelanggan: "Reguler"
+},
+{
+KodeTamu: "TMVI009",
+Nama: "Hendra Saputra",
+Alamat: "Jl. Duku No.4",
+JenisKelamin: "Laki-laki",
+KategoriPelanggan: "VIP"
+},
+{
+KodeTamu: "TMRE010",
+Nama: "Fahmi Rizal",
+Alamat: "Jl. Teratai No.7",
+JenisKelamin: "Perempuan",
+KategoriPelanggan: "Reguler"
+}
+])
+
+db.Kamar.insertMany([
+{
+KdKamar: "KMDEL001",
+JenisKamar: "Deluxe",
+Lokasi: "Lantai 1",
+HargaPerMalam: 500000
+},
+{
+KdKamar: "KMDEL004",
+JenisKamar: "Deluxe",
+Lokasi: "Lantai 1",
+HargaPerMalam: 500000
+},
+{
+KdKamar: "KMDEL008",
+JenisKamar: "Deluxe",
+Lokasi: "Lantai 3",
+HargaPerMalam: 520000
+},
+{
+KdKamar: "KMSTD005",
+JenisKamar: "Standard",
+Lokasi: "Lantai 2",
+HargaPerMalam: 300000
+},
+{
+KdKamar: "KMSTD009",
+JenisKamar: "Standard",
+Lokasi: "Lantai 1",
+HargaPerMalam: 310000
+},
+{
+KdKamar: "KMSUP002",
+JenisKamar: "Superior",
+Lokasi: "Lantai 2",
+HargaPerMalam: 400000
+},
+{
+KdKamar: "KMSUP006",
+JenisKamar: "Superior",
+Lokasi: "Lantai 4",
+HargaPerMalam: 420000
+},
+{
+KdKamar: "KMSUT003",
+JenisKamar: "Suite",
+Lokasi: "Lantai 3",
+HargaPerMalam: 800000
+},
+{
+KdKamar: "KMSUT007",
+JenisKamar: "Suite",
+Lokasi: "Lantai 5",
+HargaPerMalam: 850000
+},
+{
+KdKamar: "KMSUT010",
+JenisKamar: "Suite",
+Lokasi: "Lantai 2",
+HargaPerMalam: 780000
+}
+])
+
+db.Pemesanan.insertMany([
+{
+KdTamu: "TMVI001",
+KdKamar: "KMDEL001",
+TanggalTransaksi: "2026-04-01",
+LamaMenginap: 2,
+JumlahPesan: 1
+},
+{
+KdTamu: "TMVI002",
+KdKamar: "KMSUT003",
+TanggalTransaksi: "2026-04-01",
+LamaMenginap: 3,
+JumlahPesan: 2
+},
+{
+KdTamu: "TMRE003",
+KdKamar: "KMSUP006",
+TanggalTransaksi: "2026-04-01",
+LamaMenginap: 1,
+JumlahPesan: 1
+},
+{
+KdTamu: "TMRE004",
+KdKamar: "KMDEL004",
+TanggalTransaksi: "2026-04-02",
+LamaMenginap: 4,
+JumlahPesan: 1
+},
+{
+KdTamu: "TMVI005",
+KdKamar: "KMSUT007",
+TanggalTransaksi: "2026-04-02",
+LamaMenginap: 2,
+JumlahPesan: 1
+},
+{
+KdTamu: "TMRE006",
+KdKamar: "KMSUP002",
+TanggalTransaksi: "2026-04-03",
+LamaMenginap: 1,
+JumlahPesan: 1
+},
+{
+KdTamu: "TMRE007",
+KdKamar: "KMDEL008",
+TanggalTransaksi: "2026-04-03",
+LamaMenginap: 2,
+JumlahPesan: 1
+},
+{
+KdTamu: "TMVI008",
+KdKamar: "KMSTD009",
+TanggalTransaksi: "2026-04-03",
+LamaMenginap: 3,
+JumlahPesan: 1
+},
+{
+KdTamu: "TMVI001",
+KdKamar: "KMSUT003",
+TanggalTransaksi: "2026-04-04",
+LamaMenginap: 1,
+JumlahPesan: 1
+},
+{
+KdTamu: "TMRE004",
+KdKamar: "KMSUP006",
+TanggalTransaksi: "2026-04-05",
+LamaMenginap: 2,
+JumlahPesan: 1
+}
+])
+
+db.Kamar.find()
+
+db.Kamar.find({
+Lokasi: "Lantai 2"
+})
+
+db.Kamar.find({
+Lokasi: "Lantai 2",
+HargaPerMalam: 300000
+})
+
+db.Kamar.find({
+$or: [
+{Lokasi: "Lantai 1"},
+{HargaPerMalam: 500000}
+]
+})
+
+db.TamuHotel.find({
+Nama: {
+$in: [
+"Michael Chan",
+"Andi Wijaya",
+"Deni Gunawan",
+"Gina Aprilia"
+]
+}
+})
+
+db.TamuHotel.find(
+{},
+{
+KodeTamu: 0,
+_id: 0
+}
+)
+
+db.TamuHotel.find().limit(2)
+
+db.TamuHotel.find({
+KategoriPelanggan: "VIP"
+}).limit(4)
+
+9) Tampilkan seluruh data kamar yang jenis kamarnya “Suite”
+db.Kamar.find({
+JenisKamar: "Suite"
+})
+
+10) Tampilkan seluruh data tamu hotel yang berjenis kelamin “Perempuan”
+db.TamuHotel.find({
+JenisKelamin: "Perempuan"
+})
+
+11) Tampilkan seluruh data kamar yang harga per malamnya lebih dari 500000
+db.Kamar.find({
+HargaPerMalam: {
+$gt: 500000
+}
+})
+
+12) Tampilkan seluruh data pemesanan yang lama menginapnya lebih dari atau sama dengan 2 hari
+db.Pemesanan.find({
+LamaMenginap: {
+$gte: 2
+}
+})
+
+13) Tampilkan 3 dokumen dari tamu hotel yang kategorinya “Reguler”
+db.TamuHotel.find({
+KategoriPelanggan: "Reguler"
+}).limit(3)

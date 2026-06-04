@@ -1,0 +1,80 @@
+contrast 
+Studi Kasus: Sistem Antrian Bank dengan Nomor Antrian
+Ketentuan
+Terdapat 2 jenis loket:
+1. Customer Service (CS)
+2. Teller
+Nasabah hanya dapat memilih salah satu layanan.
+Setiap nasabah memperoleh nomor antrian:
+Customer Service → CS001, CS002, CS003, ...
+Teller → TL001, TL002, TL003, ...
+Sistem menggunakan:
+Queue untuk mengelola antrian pelayanan.
+Map untuk menyimpan data nasabah berdasarkan nomor antrian.
+Data Nasabah
+
+Setiap nasabah memiliki:
+
+Nomor Antrian
+Nama Nasabah
+Nomor Rekening
+Jenis Layanan
+
+
+--------------------------
+Ambil Antrian
+
+Budi Ambil Antrian CS
+Nomor Antrian Anda: CS001
+
+Budi Ambil Antrian Teller
+Nomor Antrian Anda: TL001
+
+Citra Ambil Antrian CS
+Nomor Antrian Anda: CS002
+
+--------------------------
+Lihat Antrian
+
+Customer Service:
+CS001 - Andi
+CS002 - Citra
+
+Teller:
+TL001 - Budi
+
+--------------------------
+Panggil Antrian Customer Service
+
+Memanggil Antrian CS001
+Nama : Andi
+
+Sisa antrian:
+
+Customer Service:
+CS002 - Citra
+
+--------------------------
+Panggil Antrian Teller
+
+Memanggil Antrian TL001
+Nama : Budi
+
+Sisa antrian:
+
+Teller : 
+Tidak ada antrian
+
+--------------------------
+Cari Data Nasabah Berdasarkan Nomor Antrian
+
+Input:
+
+CARI CS002
+
+Output:
+
+Nomor Antrian : CS002
+Nama          : Citra
+No Rekening   : 54321
+Layanan       : Customer Service

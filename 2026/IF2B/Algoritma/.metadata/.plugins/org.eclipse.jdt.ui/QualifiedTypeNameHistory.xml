@@ -7,7 +7,6 @@
     <fullyQualifiedTypeName name="java.util.ArrayList"/>
     <fullyQualifiedTypeName name="java.io.ObjectInputStream.GetField"/>
     <fullyQualifiedTypeName name="java.awt.Insets"/>
-    <fullyQualifiedTypeName name="java.util.LinkedList"/>
     <fullyQualifiedTypeName name="javax.net.ssl.SSLEngine"/>
     <fullyQualifiedTypeName name="if2b.ArrayStack"/>
     <fullyQualifiedTypeName name="java.util.Iterator"/>
@@ -21,4 +20,10 @@
     <fullyQualifiedTypeName name="if2b.PriorityQueue"/>
     <fullyQualifiedTypeName name="java.util.Comparator"/>
     <fullyQualifiedTypeName name="java.util.PriorityQueue"/>
+    <fullyQualifiedTypeName name="java.util.Queue"/>
+    <fullyQualifiedTypeName name="java.util.LinkedList"/>
+    <fullyQualifiedTypeName name="java.util.Map"/>
+    <fullyQualifiedTypeName name="java.util.HashMap"/>
+    <fullyQualifiedTypeName name="if2b.Nasabah"/>
+    <fullyQualifiedTypeName name="if2b.AntrianNasabah"/>
 </qualifiedTypeNameHistroy>

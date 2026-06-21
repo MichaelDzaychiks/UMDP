@@ -1,4 +1,4 @@
-2026/06/04-09:14:50.571 476c Reusing MANIFEST E:\School\2026\UMDP\2026\IF2B\Algoritma\.metadata\.plugins\org.eclipse.swt\EBWebView\Default\shared_proto_db\metadata/MANIFEST-000001
-2026/06/04-09:14:50.572 476c Recovering log #3
-2026/06/04-09:14:50.572 476c (ignoring error) E:\School\2026\UMDP\2026\IF2B\Algoritma\.metadata\.plugins\org.eclipse.swt\EBWebView\Default\shared_proto_db\metadata/000003.log: dropping 313 bytes; Corruption: checksum mismatch
-2026/06/04-09:14:50.572 476c Reusing old log E:\School\2026\UMDP\2026\IF2B\Algoritma\.metadata\.plugins\org.eclipse.swt\EBWebView\Default\shared_proto_db\metadata/000003.log 
+2026/06/04-09:33:52.801 30e0 Reusing MANIFEST E:\School\2026\UMDP\2026\IF2B\Algoritma\.metadata\.plugins\org.eclipse.swt\EBWebView\Default\shared_proto_db\metadata/MANIFEST-000001
+2026/06/04-09:33:52.801 30e0 Recovering log #3
+2026/06/04-09:33:52.802 30e0 (ignoring error) E:\School\2026\UMDP\2026\IF2B\Algoritma\.metadata\.plugins\org.eclipse.swt\EBWebView\Default\shared_proto_db\metadata/000003.log: dropping 347 bytes; Corruption: checksum mismatch
+2026/06/04-09:33:52.802 30e0 Reusing old log E:\School\2026\UMDP\2026\IF2B\Algoritma\.metadata\.plugins\org.eclipse.swt\EBWebView\Default\shared_proto_db\metadata/000003.log 

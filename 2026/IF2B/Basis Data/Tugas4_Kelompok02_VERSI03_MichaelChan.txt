@@ -1,0 +1,262 @@
+use Hotel_MichaelChan
+
+db.createCollection("Tamu")
+db.createCollection("Reservasi")
+db.createCollection("Kamar")
+db.createCollection("Pegawai")
+db.createCollection("LayananTambahan")
+db.createCollection("PemesananLayanan")
+
+
+// INSERT DOCUMENT
+
+db.Tamu.insertMany([
+{
+IDTamu: "TM001",
+NamaLengkap: "Michael Chan",
+Alamat: "JL.Radio No.2 KM.4",
+NomorTelepon: "081234567890",
+Email: "michael@gmail.com",
+NoKTP: "1671010101010001"
+},
+{
+IDTamu: "TM002",
+NamaLengkap: "Andi Wijaya",
+Alamat: "Jl. Melati No.10",
+NomorTelepon: "081234567891",
+Email: "andi@gmail.com",
+NoKTP: "1671010101010002"
+},
+{
+IDTamu: "TM003",
+NamaLengkap: "Deni Gunawan",
+Alamat: "Jl. Anggrek No.5",
+NomorTelepon: "081234567892",
+Email: "deni@gmail.com",
+NoKTP: "1671010101010003"
+}
+])
+
+db.Kamar.insertMany([
+{
+IDKamar: "KM001",
+TipeKamar: "Deluxe",
+TarifPerKamar: 500000,
+StatusKetersediaan: "Tersedia"
+},
+{
+IDKamar: "KM002",
+TipeKamar: "Superior",
+TarifPerKamar: 400000,
+StatusKetersediaan: "Terisi"
+},
+{
+IDKamar: "KM003",
+TipeKamar: "Suite",
+TarifPerKamar: 800000,
+StatusKetersediaan: "Tersedia"
+}
+])
+
+db.Pegawai.insertMany([
+{
+IDPegawai: "PG001",
+NamaLengkap: "Rina Putri",
+Jabatan: "Resepsionis",
+NomorTelepon: "081111111111",
+Email: "rina@hotel.com"
+},
+{
+IDPegawai: "PG002",
+NamaLengkap: "Doni Saputra",
+Jabatan: "Manager",
+NomorTelepon: "082222222222",
+Email: "doni@hotel.com"
+},
+{
+IDPegawai: "PG003",
+NamaLengkap: "Sari Amelia",
+Jabatan: "Customer Service",
+NomorTelepon: "083333333333",
+Email: "sari@hotel.com"
+}
+])
+
+db.Reservasi.insertMany([
+{
+IDReservasi: "RS001",
+IDTamu: "TM001",
+IDKamar: "KM001",
+IDPegawai: "PG001",
+TanggalCheckIn: "2026-04-01",
+TanggalCheckOut: "2026-04-03",
+JumlahMalam: 2,
+StatusReservasi: "Aktif"
+},
+{
+IDReservasi: "RS002",
+IDTamu: "TM002",
+IDKamar: "KM002",
+IDPegawai: "PG002",
+TanggalCheckIn: "2026-04-02",
+TanggalCheckOut: "2026-04-05",
+JumlahMalam: 3,
+StatusReservasi: "Selesai"
+},
+{
+IDReservasi: "RS003",
+IDTamu: "TM003",
+IDKamar: "KM003",
+IDPegawai: "PG001",
+TanggalCheckIn: "2026-04-05",
+TanggalCheckOut: "2026-04-07",
+JumlahMalam: 2,
+StatusReservasi: "Aktif"
+}
+])
+
+db.LayananTambahan.insertMany([
+{
+IDLayanan: "LY001",
+NamaLayanan: "Laundry",
+Deskripsi: "Cuci dan Setrika",
+Biaya: 50000
+},
+{
+IDLayanan: "LY002",
+NamaLayanan: "Spa",
+Deskripsi: "Perawatan Tubuh",
+Biaya: 150000
+},
+{
+IDLayanan: "LY003",
+NamaLayanan: "Sarapan",
+Deskripsi: "Breakfast Buffet",
+Biaya: 75000
+}
+])
+
+db.PemesananLayanan.insertMany([
+{
+IDPemesanan: "PL001",
+IDTamu: "TM001",
+IDLayanan: "LY001",
+WaktuPemesanan: "2026-04-01",
+JumlahLayanan: 2,
+TotalBiaya: 100000
+},
+{
+IDPemesanan: "PL002",
+IDTamu: "TM002",
+IDLayanan: "LY002",
+WaktuPemesanan: "2026-04-02",
+JumlahLayanan: 1,
+TotalBiaya: 150000
+},
+{
+IDPemesanan: "PL003",
+IDTamu: "TM003",
+IDLayanan: "LY003",
+WaktuPemesanan: "2026-04-03",
+JumlahLayanan: 3,
+TotalBiaya: 225000
+}
+])
+
+
+// UPDATE DOCUMENT
+
+db.Tamu.updateOne(
+{
+IDTamu: "TM002"
+},
+{
+$set: {
+Alamat: "Jl. Kenanga No.20"
+}
+}
+)
+
+db.Kamar.updateOne(
+{
+IDKamar: "KM001"
+},
+{
+$set: {
+StatusKetersediaan: "Terisi"
+}
+}
+)
+
+// DELETE DOCUMENT
+
+db.LayananTambahan.deleteOne(
+{
+IDLayanan: "LY003"
+}
+)
+
+db.PemesananLayanan.deleteOne(
+{
+IDPemesanan: "PL003"
+}
+)
+
+// ANGGOTA : MICHAEL CHAN
+// LOGICAL SELECTOR + EVALUATION SELECTOR
+
+db.Reservasi.find(
+{
+$and: [
+{
+JumlahMalam: {
+$gte: 2
+}
+},
+{
+StatusReservasi: "Aktif"
+}
+]
+}
+)
+
+// ANGGOTA  : MICHAEL CHAN
+// AGGREGATION
+
+db.Reservasi.aggregate([
+{
+$group: {
+_id: "$StatusReservasi",
+TotalReservasi: {
+$sum: 1
+}
+}
+}
+])
+
+
+// TESTING
+
+db.Kamar.find({
+TipeKamar: "Suite"
+})
+
+db.Kamar.find({
+TarifPerKamar: {
+$gt: 500000
+}
+})
+
+db.Pegawai.find({
+Jabatan: "Manager"
+})
+
+db.Tamu.find()
+
+db.Kamar.find()
+
+db.Reservasi.find()
+
+db.LayananTambahan.find()
+
+db.PemesananLayanan.find()

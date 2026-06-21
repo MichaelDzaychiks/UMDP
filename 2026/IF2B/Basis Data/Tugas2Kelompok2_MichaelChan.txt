@@ -1,0 +1,42 @@
+-- soal nomor 1
+-- Dibuat oleh : Michael
+SELECT *
+FROM Tamu
+WHERE NamaLengkap LIKE '%a%';
+
+-- Dibuat oleh : Michael
+SELECT IDKamar, TipeKamar, TarifPerKamar
+FROM Kamar
+WHERE TarifPerKamar > 500000;
+
+
+-- soal nomor 2
+-- Dibuat oleh : Michael
+SELECT Tamu.NamaLengkap, Reservasi.TanggalCheckIn, Reservasi.TanggalCheckOut
+FROM Tamu
+JOIN Reservasi
+ON Tamu.IDTamu = Reservasi.IDTamu;
+
+-- Dibuat oleh : Michael
+SELECT 
+    Pegawai.NamaLengkap,
+    LayananTambahan.NamaLayanan,
+    PemesananLayanan.TotalBiaya
+FROM PemesananLayanan
+JOIN Pegawai ON Pegawai.IDPegawai = PemesananLayanan.IDPegawai
+JOIN LayananTambahan ON LayananTambahan.IDLayanan = PemesananLayanan.IDLayanan;
+
+
+-- soal nomor 3
+-- Dibuat oleh : Michael
+SELECT 
+    UPPER(NamaLengkap) AS Nama_Besar,
+    YEAR(TanggalCheckIn) AS Tahun_CheckIn
+FROM Tamu
+JOIN Reservasi ON Tamu.IDTamu = Reservasi.IDTamu;
+
+-- Dibuat oleh : Michael
+SELECT 
+    MIN(TarifPerKamar) AS Tarif_Terendah,
+    MAX(TarifPerKamar) AS Tarif_Tertinggi
+FROM Kamar;

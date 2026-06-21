@@ -1,4 +1,4 @@
-2026/06/04-09:14:50.574 13a0 Reusing MANIFEST E:\School\2026\UMDP\2026\IF2B\Algoritma\.metadata\.plugins\org.eclipse.swt\EBWebView\Default\Local Storage\leveldb/MANIFEST-000001
-2026/06/04-09:14:50.579 13a0 Recovering log #3
-2026/06/04-09:14:50.579 13a0 (ignoring error) E:\School\2026\UMDP\2026\IF2B\Algoritma\.metadata\.plugins\org.eclipse.swt\EBWebView\Default\Local Storage\leveldb/000003.log: dropping 26 bytes; Corruption: checksum mismatch
-2026/06/04-09:14:50.580 13a0 Reusing old log E:\School\2026\UMDP\2026\IF2B\Algoritma\.metadata\.plugins\org.eclipse.swt\EBWebView\Default\Local Storage\leveldb/000003.log 
+2026/06/04-09:33:52.762 2c64 Reusing MANIFEST E:\School\2026\UMDP\2026\IF2B\Algoritma\.metadata\.plugins\org.eclipse.swt\EBWebView\Default\Local Storage\leveldb/MANIFEST-000001
+2026/06/04-09:33:52.767 2c64 Recovering log #3
+2026/06/04-09:33:52.767 2c64 (ignoring error) E:\School\2026\UMDP\2026\IF2B\Algoritma\.metadata\.plugins\org.eclipse.swt\EBWebView\Default\Local Storage\leveldb/000003.log: dropping 45 bytes; Corruption: checksum mismatch
+2026/06/04-09:33:52.768 2c64 Reusing old log E:\School\2026\UMDP\2026\IF2B\Algoritma\.metadata\.plugins\org.eclipse.swt\EBWebView\Default\Local Storage\leveldb/000003.log 

@@ -1,63 +1,86 @@
-
 import 'dart:io';
 import 'kalkulator.dart';
 
 void main() {
-  print("KALKULATOR NIEL NEGRO");
-  print("Pilih operasi matematika: ");
-  print("1. Tambah (+)");
-  print("2. Kurang (-)");
-  print("3. Kali (*)");
-  print("4. Bagi (/)");
-  
-  stdout.write("Masukkan nomor pilihan (1-4): ");
-  String? pilihan = stdin.readLineSync();
+  while (true) {
+    final number1 = readNumber('Masukkan bilangan pertama: ');
+    final number2 = readNumber('Masukkan bilangan kedua: ');
 
-  if (pilihan != '1' && pilihan != '2' && pilihan != '3' && pilihan != '4') {
-    print("Pilihan tidak valid! Program keluar.");
-    return;
+    final kalkulator = Kalkulator(number1, number2);
+
+    showMenu();
+
+    final pilihan = readChoice();
+
+    calculate(kalkulator, pilihan);
+
+    if (!readAgain()) {
+      print('Program selesai. Terima kasih!');
+      break;
+    }
   }
+}
 
-  stdout.write("Masukkan angka pertama: ");
-  double? number1 = double.tryParse(stdin.readLineSync() ?? '');
+double readNumber(String message) {
+  while (true) {
+    stdout.write(message);
 
-  stdout.write("Masukkan angka kedua: ");
-  double? number2 = double.tryParse(stdin.readLineSync() ?? '');
+    final input = stdin.readLineSync();
 
-  stdout.write("Masukkan angka pertama: ");
-  double? number1 = double.tryParse(stdin.readLineSync() ?? '');
+    final number = double.tryParse(input ?? '');
 
-  // Meminta input angka kedua
-  stdout.write("Masukkan angka kedua: ");
-  double? number2 = double.tryParse(stdin.readLineSync() ?? '');
+    if (number != null) {
+      return number;
+    }
 
-  // Validasi apakah input berupa angka valid
-  if (number1 == null || number2 == null) {
-    print("Input harus berupa angka yang valid!");
-    return;
+    print('Input harus berupa angka!');
   }
+}
 
-  double hasil = 0;
+void showMenu() {
+  print('\nPilih operasi:');
+  print('[1] Tambah');
+  print('[2] Kurang');
+  print('[3] Kali');
+  print('[4] Bagi');
+}
 
-  // Melakukan perhitungan berdasarkan nomor pilihan
-  switch (pilihan) {
-    case '1':
-      hasil = add(number1, number2);
-      print("\nHasil: $number1 + $number2 = $hasil");
-      break;
-    case '2':
-      hasil = subtract(number1, number2);
-      print("\nHasil: $number1 - $number2 = $hasil");
-      break;
-    case '3':
-      hasil = multiply(number1, number2);
-      print("\nHasil: $number1 * $number2 = $hasil");
-      break;
-    case '4':
-      hasil = divide(number1, number2);
-      if (!hasil.isNaN) {
-        print("\nHasil: $number1 / $number2 = $hasil");
-      }
-      break;
+int readChoice() {
+  while (true) {
+    stdout.write('Masukkan pilihan (1-4): ');
+
+    final input = stdin.readLineSync();
+
+    final choice = int.tryParse(input ?? '');
+
+    if (choice != null && choice >= 1 && choice <= 4) {
+      return choice;
+    }
+
+    print('Pilihan harus berupa angka 1-4.');
   }
+}
+
+void calculate(Kalkulator kalkulator, int choice) {
+  try {
+    final result = switch (choice) {
+      1 => kalkulator.add(),
+      2 => kalkulator.subtract(),
+      3 => kalkulator.multiply(),
+      4 => kalkulator.divide(),
+      _ => throw StateError('Pilihan tidak valid.'),
+    };
+
+    print('\nHasil: $result');
+  } catch (e) {
+    print('\nError: $e');
+  }
+}
+
+bool readAgain() {
+  stdout.write('\nApakah ingin melakukan perhitungan lagi? (Y/T): ');
+
+  final input = stdin.readLineSync()?.trim().toUpperCase();
+
+  return input == 'Y';
 }

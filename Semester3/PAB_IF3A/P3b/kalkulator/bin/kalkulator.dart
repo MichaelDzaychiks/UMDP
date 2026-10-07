@@ -2,7 +2,7 @@ class Kalkulator {
   double number1;
   double number2;
 
-  Kalkulator(this.number1,this.number2);
+  Kalkulator(this.number1, this.number2);
 
   double add() => number1 + number2;
 
@@ -10,10 +10,10 @@ class Kalkulator {
 
   double multiply() => number1 * number2;
 
-  double divide(){
-    if(number2 == 0){
-      throw Exception('tidak dapat membagi nilai dengan nol');
+  double divide() {
+    if (number2 == 0) {
+      throw Exception('Tidak dapat membagi dengan nilai nol');
     }
-    return number1/number2;
+    return number1 / number2;
   }
 }

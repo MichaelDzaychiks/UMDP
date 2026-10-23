@@ -172,7 +172,56 @@ class AVL_Tree<AnyType extends Comparable<? super AnyType>> {
     		System.out.println();
     	}
     }
+
+    private AVL_Node<AnyType> cariMinimum(AVL_Node<AnyType> t){
+        if(t == null){
+            return null;
+        } while (t.left != null){
+            t = t.left;
+        }
+        return t;
+    }
+
+    private AVL_Node<AnyType> seimbang (AVL_Node<AnyType> t){
+        if(t == null){
+            return null;
+        } else if (height(t.left) - height(t.right) > 1){ //LH
+            if(height(t.left.left) >= height(t.left.right)){ //LH
+                t = case1(t);
+            } else { //RH
+                t = case2(t);
+            }
+        } else if (height(t.right) - height(t.left) > 1) { //RH
+            if(height(t.right.right) >= height(t.right.left)){ //RH
+                t = case4(t); // right subtree mengalami RH 
+            } else { //LH
+                t = case3(t); // right subtree mengalami LH
+            }
+        }
+        // yang punya method max maka gunakan method tersebut
+        t.height = Math.max(height(t.left), height(t.right)) + 1;
+        return t;
+    }
+
+    private AVL_Node<AnyType> delete_successor (AnyType y, AVL_Node<AnyType> t){
+        if(t == null){
+            return null;
+        } else if(y.compareTo(t.element) < 0){
+            t.left = delete_successor(y,t.left);
+        } else if(y.compareTo(t.element) > 0){
+            t.right = delete_successor(y,t.right);
+        } else if(t.left != null && t.right != null) { //kondisi punya 2 anak
+            t.element = cariMinimum(t.right).element;
+            t.right = delete_successor(t.element, t.right);
+        } else {
+            t = (t.left != null) ? t.left : t.right;
+        }
+        return seimbang(t)
+    }
+
 }
+ 
+
  
 public class AVL_Implementasi {
     public static void main(String[] args) {

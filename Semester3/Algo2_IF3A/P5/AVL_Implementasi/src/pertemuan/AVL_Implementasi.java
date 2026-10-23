@@ -219,6 +219,38 @@ class AVL_Tree<AnyType extends Comparable<? super AnyType>> {
         return seimbang(t)
     }
 
+    public delete_successor(AnyType y){
+        root = delete_successor(y,root);
+    }
+    // tambahkan method untuk delete predecessor
+    // Langkah 1: buat method cariMaks
+    // Langkah 2: buat method predecessor
+
+    private AVL_Node<AnyType> cariMaksimum (AnyType t){
+        if(t == null){
+            return null;
+        } while (t.right != null){
+            t = t.right;
+        }
+        return t;
+    }
+
+    private AVL_Node<AnyType> delete_predecessor (AnyType y, AVL_Node<AnyType> t){
+        if(t == null){
+            return null;
+        } else if(y.compareTo(t.element) < 0){
+            t.left = delete_predecessor(y,t.left);
+        } else if(y.compareTo(t.element) > 0){
+            t.right = delete_predecessor(y,t.right);
+        } else if(t.left != null && t.right != null) { //kondisi punya 2 anak
+            t.element = cariMaksimum(t.left).element;
+            t.left = delete_predecessor(t.element, t.left);
+        } else {
+            t = (t.left != null) ? t.left : t.right;
+        }
+        return seimbang(t)
+    }
+
 }
  
 
@@ -240,6 +272,15 @@ public class AVL_Implementasi {
     	avl.printPreOrder();
     	System.out.println("---postOrder---");
     	avl.printPostOrder();
+
+        System.out.println("\nSetelah menghapus 17 dengan predecessor")
+        t.delete_predecessor(17);
+        System.out.println("PreOrder: ");
+        t.printPreOrder();
+        System.out.println("InOrder: ");
+        t.printInOrder();
+        System.out.println("PostOrder: ");
+        t.printPostOrder();
     }
 }
  

@@ -17,10 +17,18 @@ class Graf{
 			throw new IllegalArgumentException("Vertex diluar range");
 		}
 	}
+//	graf berarah
 	public void tambahSisi(int u, int v) {
 		cekVertex(u);
 		cekVertex(v);
 		adj[u][v] = true;
+	}
+//	graf tak berarah
+	public void tambahSisi_2(int u, int v) {
+		cekVertex(u);
+		cekVertex(v);
+		adj[u][v] = true;
+		adj[v][u] = true;
 	}
 	
 	public List<Integer> bfs (int simpul_awal){
@@ -44,6 +52,57 @@ class Graf{
 		return output;
 	}
 	
+//	BFS UNTUK SEMUA VERTEX
+	public List<Integer> bfs_ALL (){
+		boolean[] visited = new boolean [V];
+		LinkedList<Integer> queue = new LinkedList<>();
+		List<Integer> output = new ArrayList<>();
+		
+		for (int i = 0 ; i < V ; i++ ) {
+			if (!visited[i]) {
+				visited[i] = true;
+				queue.add(i);
+				while(!queue.isEmpty()) {
+					int u = queue.poll();
+					output.add(u);
+					for (int v = 0 ; v < V ; v++) {
+						if (adj[u][v] && !visited[v]) {
+							visited[v] = true;
+							queue.add(v);
+						}
+					}
+				}
+			}
+		}
+		return output;
+	}
+	
+	public List<Integer> bfs_ALL_2 (int simpul_awal){
+		cekVertex(simpul_awal);
+		boolean[] visited = new boolean[V];
+		LinkedList<Integer> queue = new LinkedList<>();
+		List<Integer> output = new ArrayList<Integer>();
+		
+		for(int i = 0; i < V; i++) {
+			int s = (i == 0) ? simpul_awal : (i == simpul_awal)? 0 : i;
+			if(!visited[s]) {
+				visited[s] = true;
+				queue.add(s);
+				while(!queue.isEmpty()) {
+					int u = queue.poll();
+					output.add(u);
+					for(int v=0; v < V; v++) {
+						if(adj[u][v] && visited[v]) {
+							visited[v] = true;
+							queue.add(v);
+						}
+					}
+				}
+			}
+		}
+		return output;
+	}
+
 	public void tampilHeaderMatrix() {
 		System.out.print("  ");
 		for(int i = 0; i < V; i++) {
@@ -84,5 +143,26 @@ public class BFS_Matrix {
 		g.tampilMatrix();
 		List<Integer> output_bfs = g.bfs(0);
 		System.out.println("BFS = " + output_bfs);
+		
+		System.out.println();
+		Graf g2 = new Graf(4);
+		g2.tambahSisi_2(0, 1);
+		g2.tambahSisi_2(0, 2);
+		g2.tambahSisi_2(1, 2);
+		g2.tambahSisi_2(1, 3);
+		g2.tambahSisi_2(2, 3);
+		g2.tampilMatrix();
+		List<Integer> output_bfs2 = g2.bfs(0);
+		System.out.println("BFS = " + output_bfs2);
+		
+		System.out.println();
+		Graf g3 = new Graf(5);
+		g3.tambahSisi_2(1, 2);
+		g3.tambahSisi_2(1, 3);
+		g3.tambahSisi_2(2, 3);
+		g3.tambahSisi_2(3, 4);
+		g3.tampilMatrix();
+		List<Integer> output_bfs3 = g3.bfs(1);
+		System.out.println("BFS = " + output_bfs3);
 	}
 }
